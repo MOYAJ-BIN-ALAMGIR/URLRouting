@@ -25,11 +25,16 @@ app.MapStaticAssets();
 //    pattern: "{controller=Home}/{action=Index}/{id?}")
 //    .WithStaticAssets();
 
+//app.MapControllerRoute(
+//    name: "news1",
+//    pattern: "News/{controller=Home}/{action=Index}");
+//app.MapControllerRoute(
+//    name: "news2",
+//    pattern: "News{controller}/{action}");
+
 app.MapControllerRoute(
-    name: "news1",
-    pattern: "News/{controller=Home}/{action=Index}");
-app.MapControllerRoute(
-    name: "news2",
-    pattern: "News{controller}/{action}");
+    name: "shop",
+    pattern: "shopping/{action}",
+    defaults: new {controller = "Home"});
 
 app.Run();
