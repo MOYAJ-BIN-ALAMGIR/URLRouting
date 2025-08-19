@@ -33,5 +33,11 @@ namespace URLRouting.Controllers
         {
            return View();
         }
+
+        public IActionResult Check()
+        {
+            ViewBag.ValueofId = RouteData.Values["id"];
+            return View();
+        }
     }
 }
