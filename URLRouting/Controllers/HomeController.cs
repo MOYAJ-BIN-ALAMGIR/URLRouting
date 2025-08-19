@@ -36,7 +36,7 @@ namespace URLRouting.Controllers
 
         public IActionResult Check(string id)
         {
-            ViewBag.ValueofId = id;
+            ViewBag.ValueofId = id ?? "Null Value";
             return View();
         }
     }

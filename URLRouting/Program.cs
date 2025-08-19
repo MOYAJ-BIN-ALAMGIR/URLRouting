@@ -41,9 +41,13 @@ app.MapStaticAssets();
 //    pattern: "shopping/{action}",
 //    defaults: new { controller = "Home" });
 
+//app.MapControllerRoute(
+//    name: "MyRoute",
+//    pattern: "{controller=Home}/{action=Index}/{id}");
+
 app.MapControllerRoute(
-    name: "MyRoute",
-    pattern: "{controller=Home}/{action=Index}/{id}");
+    name: "MyRoute1",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
 app.Run();
