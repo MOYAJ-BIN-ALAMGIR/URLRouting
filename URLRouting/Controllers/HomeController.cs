@@ -34,9 +34,9 @@ namespace URLRouting.Controllers
            return View();
         }
 
-        public IActionResult Check()
+        public IActionResult Check(string id)
         {
-            ViewBag.ValueofId = RouteData.Values["id"];
+            ViewBag.ValueofId = id;
             return View();
         }
     }
