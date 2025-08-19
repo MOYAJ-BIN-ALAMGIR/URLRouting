@@ -47,7 +47,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "MyRoute1",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}/{*catchall}");
 
 
 app.Run();

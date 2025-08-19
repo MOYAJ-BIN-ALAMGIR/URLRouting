@@ -39,5 +39,11 @@ namespace URLRouting.Controllers
             ViewBag.ValueofId = id ?? "Null Value";
             return View();
         }
+        public IActionResult CatchallTest(string id, string catchall)
+        {
+            ViewBag.ValueofId = id;
+            ViewBag.ValueofCatchall = catchall;
+            return View();
+        }
     }
 }
