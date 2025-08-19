@@ -20,10 +20,16 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller}/{action}")
-    .WithStaticAssets();
+//app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{controller=Home}/{action=Index}/{id?}")
+//    .WithStaticAssets();
 
+app.MapControllerRoute(
+    name: "news1",
+    pattern: "News/{controller=Home}/{action=Index}");
+app.MapControllerRoute(
+    name: "news2",
+    pattern: "News{controller}/{action}");
 
 app.Run();
