@@ -1,7 +1,12 @@
+using URLRouting.CustomConstraint;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.Configure<RouteOptions>(options =>
+options.ConstraintMap.Add("allowedgods", typeof(OnlyGodsConstraint)));
 
 var app = builder.Build();
 
@@ -53,8 +58,12 @@ app.MapStaticAssets();
 //    name: "regexConstraint",
 //    pattern: "{controller:regex(^H.*)=Home}/{action:regex(^Index$|^Check$)=Index}/{id?}");
 
+//app.MapControllerRoute(
+//    name: "combiningConstraint",
+//    pattern: "{controller=home}/{action=index}/{id:alpha:regex(^H.*)?}");
+
 app.MapControllerRoute(
     name: "combiningConstraint",
-    pattern: "{controller=home}/{action=index}/{id:alpha:regex(^H.*)?}");
+    pattern:"{controller=Home}/{action=Check}/{id:allowedgods}");
 
 app.Run();
