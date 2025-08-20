@@ -49,8 +49,12 @@ app.MapStaticAssets();
 //    name: "MyRoute1",
 //    pattern: "{controller=Home}/{action=Index}/{id?}/{*catchall}");
 
+//app.MapControllerRoute(
+//    name: "regexConstraint",
+//    pattern: "{controller:regex(^H.*)=Home}/{action:regex(^Index$|^Check$)=Index}/{id?}");
+
 app.MapControllerRoute(
-    name: "regexConstraint",
-    pattern: "{controller:regex(^H.*)=Home}/{action:regex(^Index$|^Check$)=Index}/{id?}");
+    name: "combiningConstraint",
+    pattern: "{controller=home}/{action=index}/{id:alpha:regex(^H.*)?}");
 
 app.Run();
