@@ -45,9 +45,12 @@ app.MapStaticAssets();
 //    name: "MyRoute",
 //    pattern: "{controller=Home}/{action=Index}/{id}");
 
-app.MapControllerRoute(
-    name: "MyRoute1",
-    pattern: "{controller=Home}/{action=Index}/{id?}/{*catchall}");
+//app.MapControllerRoute(
+//    name: "MyRoute1",
+//    pattern: "{controller=Home}/{action=Index}/{id?}/{*catchall}");
 
+app.MapControllerRoute(
+    name: "intConstraint",
+    pattern: "{controller=Home}/{action=Index}/{id:int?}");
 
 app.Run();
