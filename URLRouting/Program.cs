@@ -50,7 +50,7 @@ app.MapStaticAssets();
 //    pattern: "{controller=Home}/{action=Index}/{id?}/{*catchall}");
 
 app.MapControllerRoute(
-    name: "intConstraint",
-    pattern: "{controller=Home}/{action=Index}/{id:range(5,20)?}");
+    name: "regexConstraint",
+    pattern: "{controller:regex(^H.*)=Home}/{action:regex(^Index$|^Check$)=Index}/{id?}");
 
 app.Run();
