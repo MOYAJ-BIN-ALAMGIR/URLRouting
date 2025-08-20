@@ -51,6 +51,6 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "intConstraint",
-    pattern: "{controller=Home}/{action=Index}/{id:int?}");
+    pattern: "{controller=Home}/{action=Index}/{id:range(5,20)?}");
 
 app.Run();
